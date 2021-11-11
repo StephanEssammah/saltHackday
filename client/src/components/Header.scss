@@ -1,13 +1,20 @@
 .header {
-  background-color: rgb(48, 122, 29);
+  background-color: rgb(36, 36, 36);
   overflow: hidden;
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   padding: 1rem;
 
-  &__link {
+  &__logo {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+  }
+
+  &__profile {
     color: white;
     font-weight: bold;
   }

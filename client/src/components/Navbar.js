@@ -1,11 +1,12 @@
 import './Navbar.scss';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <a href="home" className="navbar__link">HOME</a>
-      <a href="search" className="navbar__link">SEARCH</a>
-      <a chref="favorites" className="navbar__link">FAVORITES</a>
+      <Link to="/" className="navbar__link">HOME</Link>
+      <Link to="/search" className="navbar__link">SEARCH</Link>
+      <Link to="/favorites" className="navbar__link">FAVORITES</Link>
     </nav>
   );
 }

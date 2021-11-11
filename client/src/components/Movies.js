@@ -9,11 +9,13 @@ const Movies = () => {
     console.log('reached fetcher')
     const movie = await fetch('http://localhost:3001/movies')
     const parsedMovies = await movie.json()
+    console.log(parsedMovies)
     setMovies(parsedMovies)
   }
+  
 
   if (movies.length === 0) fetcher();
-  // <MovieCard movie={movies[0]} />
+
   return (
     <article className="box-container">
       {movies.length > 0 && movies.map(movie => {

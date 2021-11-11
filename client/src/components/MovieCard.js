@@ -1,13 +1,18 @@
 import './MovieCard.scss';
+import { Link } from 'react-router-dom';
 
-const MovieCard = ({ movie}) => {
+const MovieCard = ({ movie }) => {
 
-  console.log('reached movieCard', movie)
+
+  const {title, poster} = movie
+
 
   return (
-      <div className="box">
-        <p>{movie}</p>
-      </div>
+      <Link 
+        to={`/movie/${title}`}
+        className="movieCard">
+        <img className="movieCard__poster" src={poster} />
+      </Link>
   );
 }
 

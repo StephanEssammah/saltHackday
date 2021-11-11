@@ -1,0 +1,15 @@
+.search-form {
+  padding: 20rem 2rem;
+  background-color: rgb(126, 126, 126);
+
+
+  &__input {
+    padding: 1rem;
+    width: 90%;
+    background-color: rgb(224, 224, 224);
+
+    &::placeholder{
+      text-align: center;
+    }
+  } 
+}
