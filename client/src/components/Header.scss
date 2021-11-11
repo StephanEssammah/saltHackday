@@ -1,0 +1,14 @@
+.header {
+  background-color: rgb(48, 122, 29);
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  &__link {
+    color: white;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,15 @@
+.navbar {
+  background-color: rgb(48, 122, 29);
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  &__link {
+    color: white;
+    font-weight: bold;
+  }
+}
