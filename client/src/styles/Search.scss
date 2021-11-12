@@ -8,9 +8,14 @@
     padding: 1rem;
     width: 90%;
     background-color: rgb(224, 224, 224);
+    border: none;
+    text-align: center;
 
     &::placeholder{
       text-align: center;
     }
+
+
+
   } 
 }

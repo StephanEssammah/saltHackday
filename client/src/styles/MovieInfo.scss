@@ -1,6 +1,6 @@
 .movie-info {
   background-color: rgb(102, 102, 102);
-  padding: 5rem 2rem;   
+  padding: 2rem;   
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -16,14 +16,18 @@
   }
 
   &__stats {
+    margin-top: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: gray;
+    align-items: center;
+    color: rgb(146, 146, 146);
+    padding: 0.5rem 1rem;
+    background-color: rgb(88, 88, 88);
   }
 
   &__description {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 
   &__button {

@@ -5,12 +5,11 @@ const MovieCard = ({ movie }) => {
 
   const {title, poster} = movie
 
-
   return (
       <Link 
         to={`/movie/${title}`}
         className="movieCard">
-        <img className="movieCard__poster" src={poster} />
+        <img className="movieCard__poster" src={poster} alt="poster not found"/>
       </Link>
   );
 }
