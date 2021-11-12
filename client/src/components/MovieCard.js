@@ -1,8 +1,7 @@
-import './MovieCard.scss';
+import '../styles/MovieCard.scss';
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movie }) => {
-
 
   const {title, poster} = movie
 

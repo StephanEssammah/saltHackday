@@ -27,3 +27,21 @@
   background-color: rgb(53, 53, 53);
   height: auto;
 }
+
+
+.box-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and (min-width: 768px) {
+  .box-container{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .box-container{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}

@@ -1,4 +1,4 @@
-import './Search.scss';
+import '../styles/Search.scss';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 

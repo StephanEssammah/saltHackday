@@ -1,0 +1,26 @@
+.user {
+  height: 100vh;
+  background-color: rgb(105, 105, 105);
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 15rem;
+  }
+
+
+  &__link {
+    margin: 1rem;
+    text-decoration: none;
+    background-color: #0059ff;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border: 1px solid rgb(19, 70, 146);
+
+    &:hover {
+      background-color: rgb(59, 135, 221);
+    }
+
+  }   
+
+}

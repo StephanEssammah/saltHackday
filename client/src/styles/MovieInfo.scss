@@ -1,0 +1,42 @@
+.movie-info {
+  background-color: rgb(102, 102, 102);
+  padding: 5rem 2rem;   
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+
+  &__poster {
+    margin: 0 auto;
+    max-width: 60%;
+  }
+
+  &__title {
+    margin-top: 1rem;
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: gray;
+  }
+
+  &__description {
+    margin-top: 0.5rem;
+  }
+
+  &__button {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 1rem 0rem;
+    background-color: rgb(24, 117, 255);
+    color: white;
+    border: none;
+    
+    &:hover {
+      background-color: rgb(66, 164, 243);
+    }
+  }
+}

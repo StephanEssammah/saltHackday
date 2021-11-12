@@ -1,21 +1,31 @@
 import MovieCard from './MovieCard';
-import './Movies.scss';
-import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import '../styles/Movies.scss';
 
-const Movies = () => {
-  const [movies, setMovies ]= useState([])
+const Movies = ( { movies, setMovies, user } ) => {
+  const location = useLocation().pathname
+  console.log('HELLO', location)
 
-  const fetcher = async () => {
-    console.log('reached fetcher')
+
+  const fetchPopular = async () => {
     const movie = await fetch('http://localhost:3001/movies')
     const parsedMovies = await movie.json()
-    console.log(parsedMovies)
     setMovies(parsedMovies)
   }
+
+  const fetchFavourites = async () => {
+    console.log('fetching favs')
+    const movies = await fetch(`http://localhost:3001/favourites/${user}`)
+    const parsedMovies = await movies.json()
+    setMovies(parsedMovies)
+  }
+
+if (movies.length === 0) {
+  if (location === '/') fetchPopular()
+  if (location === '/favourites') fetchFavourites()
+}
+
   
-
-  if (movies.length === 0) fetcher();
-
   return (
     <article className="box-container">
       {movies.length > 0 && movies.map(movie => {
