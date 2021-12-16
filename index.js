@@ -55,11 +55,6 @@ app.put('/favourites/:title', async (req, res) => {
   res.send('favourite set');
 })
 
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
