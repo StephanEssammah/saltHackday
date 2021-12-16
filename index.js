@@ -44,7 +44,7 @@ app.get('/favourites/:user', async (req, res) => {
   res.json(parsed);
 })
 
-app.put('movie/favourites/:title', async (req, res) => {
+app.put('/movie/favourites/:title', async (req, res) => {
   console.log('reached favourites')
   const { user } = req.body
   const { title } = req.params
