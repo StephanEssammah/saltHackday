@@ -8,7 +8,7 @@ const MovieInfo = ({ user }) => {
   const [movie, setMovie ]= useState([])
   const [button, setButton ] = useState('ADD TO FAVOURITES')
 
-  const movieTitle = titleRegex(useLocation())
+  const movieTitle = titleRegex(useLocation()).replace(':', '')
   
   const fetcher = async () => {
     console.log('movie title', movieTitle)
