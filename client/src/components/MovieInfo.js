@@ -11,7 +11,6 @@ const MovieInfo = ({ user }) => {
   const movieTitle = titleRegex(useLocation()).replace(':', '')
   
   const fetcher = async () => {
-    console.log('movie title', movieTitle)
     const movie = await fetch(`${URL}${movieTitle}`)
     const parsedMovie = await movie.json()
     setMovie(parsedMovie)
