@@ -21,13 +21,11 @@ const popularURL = `https://api.themoviedb.org/3/movie/popular?api_key=${process
 
 
 app.get('/movies', async (req, res) => {
-  console.log('movies fetched')
   const data = await fetch(popularURL)
   const parsedData = await data.json()
   const titlesArray = parsedData.results.map(item => item.title)
   
   const movieArray = await Promise.all(titlesArray.map(title => fetchMovie(title, queryKey)))
-  console.log(movieArray)
   const filteredMovieArray = movieArray.filter(item => item.title !== undefined && item.poster !== 'N/A')
   res.json(filteredMovieArray)
 })
@@ -45,13 +43,11 @@ app.get('/favourites/:user', async (req, res) => {
 })
 
 app.put('/movie/favourites/:title', async (req, res) => {
-  console.log('reached favourites')
   const { user } = req.body
   const { title } = req.params
   const doc = await fs.readFile(`./users/${user}.json`, 'utf-8')
   const currentFavourites = JSON.parse(doc)
   const movie = await fetchMovie(title, queryKey)
-  console.log('movie: ', movie)
   currentFavourites.push(movie);
   await fs.writeFile(`./users/${user}.json`, JSON.stringify(currentFavourites))
   res.send('favourite set');
