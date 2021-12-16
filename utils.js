@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 export const fetchMovie = async (query, key) => {
-  const data = await fetch(`https://www.omdbapi.com/?t=${query}${key}`)
+  const data = await fetch(`https://www.omdbapi.com/?apiKey=${key}&t=${query}`)
   const parsedData = await data.json()
   const { Title, Year, Runtime, Poster, Plot, imdbRating } = parsedData
   const finishedObject = {
@@ -12,7 +12,6 @@ export const fetchMovie = async (query, key) => {
     description: Plot,
     year: Year,
     rating: imdbRating,
-
   }
   return finishedObject;
 }

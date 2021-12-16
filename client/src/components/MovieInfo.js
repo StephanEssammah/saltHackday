@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import '../styles/MovieInfo.scss'
 import { titleRegex } from './Utils';
+const URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3001/'
 
 const MovieInfo = ({ user }) => {
   const [movie, setMovie ]= useState([])
@@ -10,13 +11,13 @@ const MovieInfo = ({ user }) => {
   const movieTitle = titleRegex(useLocation())
   
   const fetcher = async () => {
-    const movie = await fetch(`http://localhost:3001/movie/${movieTitle}`)
+    const movie = await fetch(`${URL}movie/${movieTitle}`)
     const parsedMovie = await movie.json()
     setMovie(parsedMovie)
   }
 
   const setFavourite = async () => {
-    await fetch(`http://localhost:3001/favourites/${movieTitle}`, 
+    await fetch(`${URL}favourites/${movieTitle}`, 
     {
       method: 'PUT',  
       headers: {

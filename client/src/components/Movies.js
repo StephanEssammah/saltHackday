@@ -2,17 +2,19 @@ import MovieCard from './MovieCard';
 import { useLocation } from 'react-router-dom';
 import '../styles/Movies.scss';
 
+const URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3001/'
+
 const Movies = ( { movies, setMovies, user } ) => {
   const location = useLocation().pathname
 
   const fetchPopular = async () => {
-    const movie = await fetch('http://localhost:3001/movies')
+    const movie = await fetch(`${URL}movies`)
     const parsedMovies = await movie.json()
     setMovies(parsedMovies)
   }
 
   const fetchFavourites = async () => {
-    const movies = await fetch(`http://localhost:3001/favourites/${user}`)
+    const movies = await fetch(`${URL}favourites/${user}`)
     const parsedMovies = await movies.json()
     setMovies(parsedMovies)
   }
