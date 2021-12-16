@@ -37,7 +37,7 @@ app.get('/movie/:title', async (req, res) => {
   res.json(movie);
 })
 
-app.get('movie/favourites/:user', async (req, res) => {
+app.get('/favourites/:user', async (req, res) => {
   const { user } = req.params
   const doc = await fs.readFile(`./users/${user}.json`, 'utf-8')
   const parsed = JSON.parse(doc)
