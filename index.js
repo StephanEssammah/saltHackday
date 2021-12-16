@@ -44,12 +44,14 @@ app.get('/favourites/:user', async (req, res) => {
   res.json(parsed);
 })
 
-app.put('movie/favourites/:title', async (req, res) => { 
+app.put('movie/favourites/:title', async (req, res) => {
+  console.log('reached favourites')
   const { user } = req.body
   const { title } = req.params
   const doc = await fs.readFile(`./users/${user}.json`, 'utf-8')
   const currentFavourites = JSON.parse(doc)
   const movie = await fetchMovie(title, queryKey)
+  console.log('movie: ', movie)
   currentFavourites.push(movie);
   await fs.writeFile(`./users/${user}.json`, JSON.stringify(currentFavourites))
   res.send('favourite set');
