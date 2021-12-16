@@ -11,7 +11,8 @@ const MovieInfo = ({ user }) => {
   const movieTitle = titleRegex(useLocation())
   
   const fetcher = async () => {
-    const movie = await fetch(`${URL}movie/${movieTitle}`)
+    console.log('movie title', movieTitle)
+    const movie = await fetch(`${URL}${movieTitle}`)
     const parsedMovie = await movie.json()
     setMovie(parsedMovie)
   }
